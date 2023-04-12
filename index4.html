@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=devise-width, initial-scale=1.0">
+    <title>Изменение цвета </title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <span v-bind:class="textColor">Этот текст может менять цвет!</span>
+        <input v-model="textColor">
+    </div>
+
+    <style>
+                .red{
+                    color:red;
+                }
+                .blue{
+                    color:blue;
+                }
+                .green{
+                    color:green;
+                }
+                .yellow{
+                    color: yellow;
+                }
+            </style>
+
+    <script>
+                const colorChanger = {
+                    data() {
+                        return {
+                            textColor: 'red'
+                        }
+                    }
+                }
+                Vue.createApp(colorChanger).mount("#app")
+            </script>
+    </body>
+</html>
